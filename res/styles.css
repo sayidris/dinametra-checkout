@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      padding: 0px 40px;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+    }
+
+    .mainbody{
+      margin: auto;
+    }
+    .nav-item img{
+      width: 300px;
+    }
+
+    h1 {
+      margin: 10px 0;
+    }
+
+    /* styles for nav row */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      background-color: #fff;
+      padding: 10px;
+      display: flex;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+    }
+
+    /* styles for body content row */
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 10px;
+      margin-top: 20px;
+      background-image: url("../images/bg-line-red.png");
+      background-repeat: no-repeat;
+      background-position: center 65%;
+      background-size: contain;
+    }
+
+    /* styles for individual columns in body content */
+    .column1 {
+      flex-basis: 58%;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .column2 {
+      flex-basis: 38%;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .formbox {
+      width: 70%;
+      border: 4px solid rgba(210, 210, 210, 0.1);
+      margin: auto;
+      background-color: rgba(250, 250, 250, 0.9);
+      border-radius: 35px;
+      padding: 20px;
+    }
+
+    .form-stage-btn {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 10px;
+      background-color: #f4263e;
+      color: #ffffff;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    .prev-btn{
+      text-align:left; vertical-align:middle; color:#787c9a;
+      cursor: pointer;
+    }
+    .form-btn, .form-btn-n{
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 10px;
+      background-color: #f4263e;
+      color: #ffffff;
+      border-radius: 10px;
+      font-size: 14px;
+      padding: 15px 50px;
+      border:none;
+      outline:none;
+    }
+    .form-btn-n{
+      padding: 15px 20px;
+    }
+    .progressbar-base {
+      position: relative;
+      height: 8px;
+      width: 100%;
+      background-color: #d9d9db;
+      border-radius: 20px;
+    }
+
+    .progressbar-50 {
+      position: absolute;
+      height: 8px;
+      width: 50%;
+      background-color: #f4263e;
+      border-radius: 20px;
+      left: 0;
+      top: 0;
+    }
+
+    .progressbar-98 {
+      position: absolute;
+      height: 8px;
+      width: 98%;
+      background-color: #f4263e;
+      border-radius: 20px;
+      left: 0;
+      top: 0;
+    }
+
+    .main-form {
+      margin: 10px 0;
+    }
+
+    .form_section {
+      display: none;
+    }
+    
+    .form_section:first-child {
+      display: block;
+    }
+
+    .main-form input[type="text"],
+    .main-form input[type="tel"],
+    .main-form input[type="email"],
+    .main-form input[type="number"],
+    .main-form select,
+    .main-form .inp {
+      background-color: fff;
+      border-radius: 15px;
+      border: none;
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0;
+      box-shadow: 2px 2px 2px #d9d9db;
+      color: #787c9a;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .inp {
+      padding: 0px 15px;
+    }
+    .main-form input[type="text"]:focus,
+    .main-form input[type="tel"]:focus,
+    .main-form input[type="email"]:focus,
+    .main-form input[type="number"]:focus,
+    .main-form select:focus {
+      box-shadow: 2px 2px 2px red;
+      outline: none;
+    }
+
+    .main-form input[type="text"]::placeholder,
+    .main-form input[type="tel"]::placeholder,
+    .main-form input[type="email"]::placeholder 
+    .main-form input[type="number"]::placeholder {
+      color: #787c9a;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .cp-form input[type="text"]::placeholder, .cp-form input[type="number"]::placeholder {
+      color: #d9d9db;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+    }
+
+    .main-form input[type="radio"] {
+      color: #787c9a;
+      width: 20px;
+      height: 20px;
+    }
+
+    .main-form input[type="radio"]:checked {
+      color: #787c9a;
+    }
+
+    .input-50 {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .main-form .input-50 select,
+    .main-form .input-50 input {
+      display: inline-block;
+      width: 49%;
+      margin: auto;
+    }
+
+    .cardtext{
+      font-size:14px; vertical-align:middle; padding:20px 0 30px;
+    }
+    .cardbox{
+      font-size:25px; margin:0 0 10px;
+    }
+    .cardno input[type="number"]{
+      padding:0; margin:0 10px; width:50%; box-shadow:0 0 0; border-bottom: 3px solid #787c9a; border-radius: 0;
+      background-color: transparent;
+      font-size: 16px;
+    }
+    .carddate input[type="text"]{
+      padding:10px 0; margin:0; width:50%; box-shadow:0 0 0; border:0; border-radius: 0;
+      background-color: transparent;
+      font-size: 16px;
+    }
+    .cardccv input[type="number"]{
+      padding:10px 0; margin:30px 0 0; width:30%; box-shadow:0 0 0; border:0; border-radius: 0;
+      background-color: transparent;
+      font-size: 16px;
+    }
+
+    .cardccv input[type="number"]::placeholder, .carddate input[type="text"]::placeholder {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .cardno input[type="number"]:focus,
+    .cardccv input[type="number"]:focus,
+    .carddate input[type="text"]:focus {
+      box-shadow: 0 0 0;
+      outline: none;
+    }
+    .sumbox {
+      width:70%;
+    }
+
+    .sumtitle{
+      text-align:left; margin:90px 30px 50px;
+    }
+    .cardtext1{
+      display: inline-block;
+      width: 40%;
+      font-size:14px;
+      vertical-align: middle;
+    }
+
+    .cardimg{
+      display: inline-block;
+      width: 40%;
+      vertical-align:middle;
+    }
+
+    .cardimg img{
+      width: 100%;
+    }
+   
+    /* media query for mobile view */
+    @media screen and (max-width: 1000px) {
+      body {
+        padding: 0 20px;
+      }
+      .sumbox {
+        width:80%;
+      }
+    }
+    @media screen and (max-width: 920px) {
+      body {
+        padding: 0px;
+      }
+      .formbox {
+        width: 90%;
+        padding: 10%;
+      }
+      .sumbox {
+        width:90%;
+      }
+    }
+    @media screen and (max-width: 800px) {
+      .formbox {
+        width: 100%;
+        padding: 5%;
+      }
+      .sumbox {
+        width:95%;
+      }
+    }
+
+    @media screen and (max-width: 620px) {
+      .content{
+        flex-direction: column-reverse;
+      }
+      .form-btn-n{
+        padding: 6px 8px;
+        font-size: 12px;
+      }
+
+      .form-btn{
+        padding: 6px 20px;
+      }
+      .form-stage-btn {
+        padding: 10px;
+        font-size: 12px;
+      }
+      .nav-item img{
+        width: 200px;
+      }
+      .mainbody {
+        width: 80%;
+        padding: 0;
+      }
+    
+      .column1 {
+        flex-basis: 100%;
+      }
+      .column2 {
+        flex-basis: 100%;
+      }
+      .cardno input[type="number"]{
+        width: 70%;
+      }
+      .carddate input[type="text"]{
+        width: 70%;
+      }
+      .cardccv input[type="number"]{
+        width: 25%;
+      }
+      .sumbox {
+        width:95%;
+        margin: auto;
+      }
+      .sumtitle{
+        margin:40px 0px 50px;
+      }
+    }
+    @media screen and (max-width: 450px) {
+        .cardimg img{
+          width: 100%;
+        }
+        .form-btn-n{
+          padding: 6px 8px;
+          font-size: 12px;
+        }
+  
+        .form-btn{
+          padding: 6px 20px;
+        }
+        .form-stage-btn {
+          padding: 10px;
+          font-size: 12px;
+        }
+        .nav-item img{
+          width: 200px;
+        }
+        .mainbody {
+          width: 100%;
+          margin: auto;
+          padding: 0;
+        }
+    }
+
+    /* styles for footer row */
+    .footer {
+      text-align: center;
+    }
