@@ -77,12 +77,12 @@
                   Dinametra está obligado por ley a recaudar los impuestos sobre las transacciones de las compras
                   realiadas en determinadas jurisdicciones fiscales.
                 </div>
-                <div class="rbtn" style="color: #787c9a; font-size: 12px; margin: 20px 0; line-height: 0em;">
+                <div class="rbtn">
                   <input type="radio" name="tc" id="tc" value="yes"> Acepto los <span style="color: #f4263e;">Términos y
                     Condiciones</span>
                 </div>
                 <div style="text-align:right;">
-                  <button class="form-btn next-btn">
+                  <button class="form-btn next-btn long_btn">
                     Siguiente
                   </button>
                 </div>
@@ -137,7 +137,7 @@
                 </div>
               </div>
               <span style="color: #f4263e">
-                <div class="rbtn" style="color: #787c9a; font-size: 12px; margin: 20px 0; line-height: 0em;">
+                <div class="rbtn">
                   <input type="radio" name="tc" id="tc" value="yes"> Acepto los <span style="color: #f4263e;">Términos y
                     Condiciones</span>
                 </div>

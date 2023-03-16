@@ -97,6 +97,14 @@
       border:none;
       outline:none;
     }
+
+    .rbtn{
+      color: #787c9a; font-size: 12px; margin: 20px 0 30px; line-height: 0em;
+    }
+
+    .long_btn{
+      width: 100%;
+    }
     .form-btn-n{
       padding: 15px 20px;
     }
