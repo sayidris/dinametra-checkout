@@ -193,79 +193,9 @@
 
   <div class="footer">
     <div style="color: #f4263e;">
-      <h2>Testimonios</h2>
+    <h2>Testimonios</h2>
     </div>
-    <div style="color: #f4263e; margin: 0 20px 50px;">
-      <section class="testimonials_section layout_padding11 mt-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <section class="testimonials">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div id="customers-testimonials" class="owl-carousel">
-
-                        <!--TESTIMONIAL 1 -->
-                        <div class="item">
-                          <div class="shadow-effect">
-                            <img class="img-circle"
-                              src="http://themes.audemedia.com/html/goodgrowth/images/testimonial1.jpg" alt="">
-                            <p>Dramatically maintain clicks-and-mortar solutions without functional solutions.</p>
-                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                              class="fa fa-star"></i><i class="fa fa-star"></i>
-                          </div>
-                          <div class="testimonial-name">EMILIANO AQUILANI</div>
-                        </div>
-                        <!--END OF TESTIMONIAL 1 -->
-                        <!--TESTIMONIAL 2 -->
-                        <div class="item">
-                          <div class="shadow-effect">
-                            <img class="img-circle"
-                              src="http://themes.audemedia.com/html/goodgrowth/images/testimonial2.jpg" alt="">
-                            <p>Dramatically maintain clicks-and-mortar solutions without functional solutions.</p>
-                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                              class="fa fa-star"></i><i class="fa fa-star"></i>
-                          </div>
-                          <div class="testimonial-name">ANNA ITURBE</div>
-                        </div>
-                        <!--END OF TESTIMONIAL 2 -->
-                        <!--TESTIMONIAL 3 -->
-                        <div class="item">
-                          <div class="shadow-effect">
-                            <img class="img-circle"
-                              src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
-                            <p>Dramatically maintain clicks-and-mortar solutions without functional solutions.</p>
-                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                              class="fa fa-star"></i><i class="fa fa-star"></i>
-                          </div>
-                          <div class="testimonial-name">LARA ATKINSON</div>
-                        </div>
-                        <!--END OF TESTIMONIAL 3 -->
-                        <!--TESTIMONIAL 4 -->
-                        <div class="item">
-                          <div class="shadow-effect">
-                            <img class="img-circle"
-                              src="http://themes.audemedia.com/html/goodgrowth/images/testimonial4.jpg" alt="">
-                            <p>Dramatically maintain clicks-and-mortar solutions without functional solutions.</p>
-                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                              class="fa fa-star"></i><i class="fa fa-star"></i>
-                          </div>
-                          <div class="testimonial-name">IAN OWEN</div>
-                        </div>
-                        <!--END OF TESTIMONIAL 4 -->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <!-- END OF TESTIMONIALS -->
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- end testimonials -->
-    </div>
+    <?php include("testimonial.php"); ?>
   </div>
 </div> 
 <script>
