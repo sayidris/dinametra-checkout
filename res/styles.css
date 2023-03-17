@@ -104,6 +104,7 @@
 
     .long_btn{
       width: 100%;
+      margin: 15px auto;
     }
     .form-btn-n{
       padding: 15px 20px;
@@ -201,6 +202,18 @@
       color: #787c9a;
     }
 
+    input[type="radio"]:checked::before {
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: #787c9a;
+      margin-right: 5px;
+      vertical-align: middle;
+      border:2px solid #f4263e;
+    }
+
     .input-50 {
       text-align: center;
       margin: 10px 0;
@@ -247,11 +260,13 @@
       outline: none;
     }
     .sumbox {
-      width:70%;
+      width:85%;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px 0 0 10px;
     }
 
     .sumtitle{
-      text-align:left; margin:90px 30px 50px;
+      text-align:left; margin:90px 30px 30px;
     }
     .cardtext1{
       display: inline-block;
