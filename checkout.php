@@ -26,7 +26,7 @@ if ($response === false) {
 curl_close($ch);
 */
 
-$response = '{"scope":"https://api.paypal.com/v1/payments/.* https://uri.paypal.com/services/disputes/update-seller openid https://uri.paypal.com/services/disputes/read-seller https://uri.paypal.com/services/applications/webhooks","access_token":"A21AAIuuVPvlLcLV5r7vT8hdoobfFvU6xO3FuTkNSx7i0O0x2JU_Xj0secb6r2Xd5zvYaYdzTiVoKoF9_KbmuOlFb6iOoyLFg","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32152,"nonce":"2023-03-17T00:11:08Zxacr9IjTnru1l6UbL6gVjcMIsC9tzY3Wu_-rwSWKNsw"}';
+$response = '{"scope":"https://api.paypal.com/v1/payments/.* https://uri.paypal.com/services/disputes/update-seller openid https://uri.paypal.com/services/disputes/read-seller https://uri.paypal.com/services/applications/webhooks","access_token":"A21AAKcn7s7uM2fQF-uWarjFMc3YYGaI4mrblqmTUPRFxMFsLtTJ7HpJco4YzbDjKtAfJe4l-hLZGmQuJgE0xpFnBlUkGVKjQ","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400,"nonce":"2023-03-17T11:21:07ZSIkS7PxebtFuVNlTaPQPweJuWQigpHNQglI7YsXPI44"}';
 $data = json_decode($response, true);
 $access_token = $data["access_token"];
 $expires_in = $data["expires_in"];
@@ -353,7 +353,7 @@ $expires_in = $data["expires_in"];
                 }
             ],
             redirect_urls: {
-                return_url: 'http://localhost/dinametra-checkout/checkout.php',
+                return_url: 'http://localhost/dinametra-checkout/thankyou.php',
                 cancel_url: 'http://localhost/dinametra-checkout/checkout.php'
             }
         }));
