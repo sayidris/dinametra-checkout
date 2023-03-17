@@ -1,4 +1,7 @@
 <?php
+$product_name = "Curso de Tiktok ads";
+$product_price = 1234;
+$coupon_code = '"coupons":[{"code":"DINA10PCTOFF","value":"10%"},{"code":"DINA20PCTOFF","value":"20%"}]';
 /*
 $clientId = 'Acn05RSU2zS3b0P55yQxKKo0-Kf-MPqZVMyYfpwIYLH67uF6Oq07xRfbprNLY59FuX--RcW9ENZbPhou';
 $clientSecret = 'ENpCz4wXIXCrwBQiMkIVVoJ9Ks-ZvFtEkUqLfCttjaqQCIIhysu5KxPoWssbbKMNUa9KUWiyvg2A18BW';
@@ -203,14 +206,16 @@ $expires_in = $data["expires_in"];
               </div>
             </div>
             <div style="display:inline-block; width: 31%; margin:auto; text-align:left;">
-              <span style="color:#f4263e;">$1,234&nbsp;MXN</span><br><span style="color:#787c9a;"><del>$1,234&nbsp;MXN</del></span>
+              <span style="color:#f4263e;" class="no_break">$1,234& MXN</span><br>
+              <span style="color:#787c9a;" class="no_break"><del>$1,234 MXN</del></span>
+              <span style="color:#f4263e;" id="discount" class="no_break"></span><br>
             </div>
               <div class="main-form cp-form">
                 <div style="display:inline-block; width: 55%; margin:auto; text-align:left;">
                   <input type="text" id="coupon" name="coupon" placeholder="Agregar cupón de descuento" style="width:80%; padding:10px;" />
                 </div>
                 <div style="display:inline-block; width: 42%; margin:auto; text-align:left;">
-                  <button id="paypal-button-container" class="submit2 form-btn">Aplicar</button>
+                  <button id="paypal-button-container" class="coupon form-btn">Aplicar</button>
                 </div>
               </div>
           </div>
@@ -228,6 +233,8 @@ $expires_in = $data["expires_in"];
 </div> 
 
 <script>
+  //Coupon Application
+  function get
   //  TESTIMONIALS CAROUSEL HOOK
   jQuery(document).ready(function ($) {
     "use strict";
@@ -388,20 +395,6 @@ $expires_in = $data["expires_in"];
     // Add event listener for the "Pago" button click
     const btn = document.querySelector('.submit');
     btn.addEventListener('click', function() {
-        // Check if payment method is selected before submitting the form
-        const paymentMethod = document.querySelector('input[name="paymethod"]:checked');
-        if (paymentMethod) {
-            // Payment method selected, submit the form via AJAX
-            submitForm();
-        } else {
-            // Payment method not selected, show error message or perform other action
-            console.error('Payment method not selected');
-        }
-    });
-
-    // Add event listener for the "Pago" button click
-    const btn2 = document.querySelector('.submit2');
-    btn2.addEventListener('click', function() {
         // Check if payment method is selected before submitting the form
         const paymentMethod = document.querySelector('input[name="paymethod"]:checked');
         if (paymentMethod) {
