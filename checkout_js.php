@@ -1,3 +1,23 @@
+<script>
+  const clientId = 'Acn05RSU2zS3b0P55yQxKKo0-Kf-MPqZVMyYfpwIYLH67uF6Oq07xRfbprNLY59FuX--RcW9ENZbPhou';
+  const clientSecret = 'ENpCz4wXIXCrwBQiMkIVVoJ9Ks-ZvFtEkUqLfCttjaqQCIIhysu5KxPoWssbbKMNUa9KUWiyvg2A18BW';
+  const url = 'https://api-m.sandbox.paypal.com/v1/oauth2/token';
+  const body = 'grant_type=client_credentials';
+  const headers = {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret)
+  };
+
+  fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: body
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+</script>
+
 <?php
 $product_name = "Curso de Tiktok ads";
 $product_price = 1234;
@@ -28,7 +48,7 @@ if ($response === false) {
 curl_close($ch);
 */
 
-$response = '{"scope":"https://api.paypal.com/v1/payments/.* https://uri.paypal.com/services/disputes/update-seller openid https://uri.paypal.com/services/disputes/read-seller https://uri.paypal.com/services/applications/webhooks","access_token":"A21AAJs-OtCuPGOqEXumlSACYgBEFpx3Qn_-EVbAO_qbjIfHuqJKgJE1TEeTHI-rWgJSiyMPJblbp4gQRaNtFPziWrsWMtxaQ","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400,"nonce":"2023-03-17T20:36:43ZUS_JiHLQfhlZ6s6BSKb8TQVQF2XP1VRgK_t3ElIl174"}';
+//$response = '{"scope":"https://api.paypal.com/v1/payments/.* https://uri.paypal.com/services/disputes/update-seller openid https://uri.paypal.com/services/disputes/read-seller https://uri.paypal.com/services/applications/webhooks","access_token":"A21AAKcn7s7uM2fQF-uWarjFMc3YYGaI4mrblqmTUPRFxMFsLtTJ7HpJco4YzbDjKtAfJe4l-hLZGmQuJgE0xpFnBlUkGVKjQ","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400,"nonce":"2023-03-17T11:21:07ZSIkS7PxebtFuVNlTaPQPweJuWQigpHNQglI7YsXPI44"}';
 $data = json_decode($response, true);
 $access_token = $data["access_token"];
 $expires_in = $data["expires_in"];
@@ -204,12 +224,10 @@ $expires_in = $data["expires_in"];
               <div style="display:inline-block; color:#787c9a; padding: 10% 10px; vertical-align: top;">Curso de Tiktok ads
               </div>
             </div>
-            <div style="display:inline-block; width: 31%; margin:auto; text-align:left; vertical-align: middle; line-height:1.5em; font-size:16px;">
-              <span style="color:#f4263e;" class="no_break">$<?php echo number_format($product_price); ?> MXN</span><br>
-              <span style="color:#787c9a;" class="no_break"><del>$<?php echo number_format($product_price); ?> MXN</del></span><br>
+            <div style="display:inline-block; width: 31%; margin:auto; text-align:left;">
+              <span style="color:#f4263e;" class="no_break">$1,234& MXN</span><br>
+              <span style="color:#787c9a;" class="no_break"><del>$1,234 MXN</del></span>
               <span style="color:#f4263e;" id="coupon-details" class="no_break"></span><br>
-              <span style="color:#f4263e;" id="totalAmount" class="no_break"></span><br>
-              <input type="hidden" id="t_amount" name="t_amount" />
             </div>
               <div class="main-form cp-form">
                 <div style="display:inline-block; width: 55%; margin:auto; text-align:left;">
@@ -235,38 +253,44 @@ $expires_in = $data["expires_in"];
 
 <script>
   //Coupon Application
-  total_amount(0);
   function searchCoupon(coupon_code) {
     $.ajax({
-        type: "POST",
-        url: "search_coupons.php",
-        data: {coupon_code: coupon_code},
-        dataType: "json",
-        success: function(data){
+      type: "GET",
+      url: "coupons.json",
+      dataType: "json",
+      success: function(data){
+          // Search for the coupon with the given code
+          var found_coupon = data.coupons.find(function(coupon) {
+              return coupon.code === coupon_code;
+          });
+          
+          // If the coupon is found, display its data in the <div> element
+          if (found_coupon) {
             // Create a string with the coupon data
             var coupon_html = //"Code: " + data.code + "<br>" +
                               //"Validity: " + data.validity + "<br>" +
                               //"Value: " + data.value;
-                              data.value;
+                              found_coupon.value;
             
             // Append the coupon data to the <div> element
-            if (!isNaN(coupon_html)){
-              $("#coupon-details").html(coupon_html + "% Off");
-              total_amount(coupon_html);
-            } else {
-              $("#coupon-details").html("<span style='font-size:12px'>Invald coupon!</span>").fadeToggle(3000);
-            }
-        },
-        error: function(jqXHR, textStatus, errorThrown){
-            console.log(errorThrown);
-        }
+            $("#coupon-details").html("<br>-" + coupon_html);
+            total_amount(coupon_html);
+          }
+          // If the coupon is not found, display an error message
+          else {
+              $("#coupon-details").html("Coupon not found.");
+          }
+      },
+      error: function(jqXHR, textStatus, errorThrown){
+          console.log(errorThrown);
+      }
     });
-}
+  }
+
 
   // Add event listener for the "Aplicar" button click
   const coupon_btn = document.querySelector('.couponBtn');
-    coupon_btn.addEventListener('click', function(event) {
-        event.preventDefault();
+    coupon_btn.addEventListener('click', function() {
         // Check if coupon code has a value
         var coupon_code = document.getElementById("coupon_code").value;
         if (coupon_code) {
@@ -274,8 +298,7 @@ $expires_in = $data["expires_in"];
             searchCoupon(coupon_code);
         } else {
             // Coupon code has no value
-            //console.error('Invalid coupon code!');
-            total_amount(0);
+            console.error('Invalid coupon code!');
         }
     });
     
@@ -286,10 +309,6 @@ $expires_in = $data["expires_in"];
       } else {
         var discounted = 0;
       }
-      var totalAmount = product_price - discounted;
-      document.getElementById("t_amount").value = totalAmount;
-      document.getElementById("totalAmount").innerHTML = "Total: $"+totalAmount.toLocaleString(undefined, {maximumFractionDigits: 2});
-      return totalAmount;
     }
   //  TESTIMONIALS CAROUSEL HOOK
   jQuery(document).ready(function ($) {
@@ -384,7 +403,6 @@ $expires_in = $data["expires_in"];
     function paypalPayment() {
         // Add your PayPal payment code here
         console.log('Processing PayPal payment...');
-        var product_totalPrice = document.getElementById('t_amount').value;
 
         // PayPal payment processing code
         const xhr = new XMLHttpRequest();
@@ -410,10 +428,10 @@ $expires_in = $data["expires_in"];
             transactions: [
                 {
                     amount: {
-                        total: product_totalPrice,
+                        total: '10.00',
                         currency: 'USD'
                     },
-                    description: '<?php echo $product_name; ?>'
+                    description: 'Payment description'
                 }
             ],
             redirect_urls: {
