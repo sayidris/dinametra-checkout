@@ -321,6 +321,9 @@
     @media screen and (max-width: 620px) {
       .content{
         flex-direction: column-reverse;
+        background-image: url("../images/bg-line-red.png");
+        background-position: center 65%;
+        background-size: contain;
       }
       .form-btn-n{
         padding: 6px 8px;
